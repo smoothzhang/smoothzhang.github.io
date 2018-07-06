@@ -1,0 +1,43 @@
+language: node_js #设置语言
+node_js: stable #设置版本
+
+cache:
+  apt: true
+  directories:
+    - node_modules #缓存 不常变更
+
+before_install:
+  - export TZ='Asia/Shanghai' #更改时区
+
+install:
+  - npm install #安装hexo
+
+script:
+  - hexo clean #清除
+  - hexo g #生成
+
+after_script:
+  - git clone https://${GH_REF} .deploy_git
+  - cd .deploy_git
+  - git checkout master
+  - cd ../
+  - mv .deploy_git/.git ./public/ #保留提交
+  - cd ./public
+  - git config user.name "Smooth"
+  - git config user.email "zthhhhhhhhh@users.noreply.github.com"
+  - git add .
+  - git commit -m "Update by Travis CI at 'date + "%Y.%m.%d %H:%M:%S"'"
+  - git push --force --quiet "https://${PersonalAccessTokens}@${GH_REF}" master:master
+
+branches:
+  only:
+    - hexo
+env:
+ global:
+   - GH_REF: github.com/zthhhhhhhhh/zthhhhhhhhh.github.io.git
+
+notifications:
+  email:
+    - zthhhhhhhhh@126.com
+  on_success: change
+  on_failure: always
