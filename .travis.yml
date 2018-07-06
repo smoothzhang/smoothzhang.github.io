@@ -26,7 +26,7 @@ after_script:
   - git config user.name "Smooth"
   - git config user.email "zthhhhhhhhh@users.noreply.github.com"
   - git add .
-  - git commit -m "Update by Travis CI at 'date + "%Y.%m.%d %H:%M:%S"'"
+  - git commit -m "Update by Travis CI at 'date + "%Y.%m.%d %H:%M"'"
   - git push --force --quiet "https://${PersonalAccessTokens}@${GH_REF}" master:master
 
 branches:
