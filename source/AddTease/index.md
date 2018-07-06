@@ -4,6 +4,7 @@ title: 加个吐槽
 # 加个吐槽
 一本正经的严肃评论。
 
+## 下载地址
 [App Store](https://itunes.apple.com/cn/app/加个吐槽/id1404428862)
 [Github](https://github.com/zthhhhhhhhh/AddTease)
 
