@@ -6,7 +6,7 @@ title: 加个吐槽
 
 ## 下载地址
 [App Store](https://itunes.apple.com/cn/app/加个吐槽/id1404428862)
-[Github](https://github.com/zthhhhhhhhh/AddTease)
+~~Github（已私有）~~
 
 ## 更新日志
 ### 2.0
